@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--FirstVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Space_Oddity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstVC" id="BYZ-38-t0r" customClass="FirstVC" customModule="Space_Oddity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,17 +22,17 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Space Oddity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Qk-XP-g2F">
-                                <rect key="frame" x="10" y="97" width="300" height="70"/>
+                                <rect key="frame" x="10" y="59" width="300" height="135"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="54"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="p6a-g8-ahd">
-                                <rect key="frame" x="109.5" y="338" width="101" height="98"/>
+                                <rect key="frame" x="106" y="338" width="108" height="98"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDy-mE-QYG">
-                                        <rect key="frame" x="0.0" y="0.0" width="101" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="108" height="44"/>
                                         <color key="backgroundColor" red="0.94653743505477905" green="0.78553062677383423" blue="0.82805889844894409" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
                                         <inset key="contentEdgeInsets" minX="30" minY="10" maxX="30" maxY="10"/>
@@ -40,17 +40,20 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="PbK-Go-4eG" kind="show" id="Xfe-ZL-35t"/>
+                                            <segue destination="PbK-Go-4eG" kind="show" identifier="toSecondVC" animates="NO" id="Xfe-ZL-35t"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLA-p8-DkA">
-                                        <rect key="frame" x="0.0" y="54" width="101" height="44"/>
+                                        <rect key="frame" x="0.0" y="54" width="108" height="44"/>
                                         <color key="backgroundColor" red="0.94653743505477905" green="0.78553062677383423" blue="0.82805889844894409" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
                                         <inset key="contentEdgeInsets" minX="30" minY="10" maxX="30" maxY="10"/>
-                                        <state key="normal" title="Start">
+                                        <state key="normal" title="Rules">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="mxl-fp-Bft" kind="show" identifier="toRules" animates="NO" id="FAF-Jw-XQx"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="z5a-rP-aPg"/>
@@ -63,15 +66,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="headLabel" destination="5Qk-XP-g2F" id="pwj-67-ssn"/>
+                        <outlet property="rulesButton" destination="fLA-p8-DkA" id="VeT-tW-kpz"/>
+                        <outlet property="startButton" destination="FDy-mE-QYG" id="qC4-jA-oeI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="67.5" y="-65"/>
+            <point key="canvasLocation" x="66.549295774647888" y="-65.625"/>
         </scene>
-        <!--View Controller-->
+        <!--SecondVC-->
         <scene sceneID="u6C-gf-X4p">
             <objects>
-                <viewController id="PbK-Go-4eG" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondVC" id="PbK-Go-4eG" customClass="SecondVC" customModule="Space_Oddity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kuJ-Pq-UQr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,6 +100,9 @@
                                 <state key="normal" title="menu">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="goBack:" destination="PbK-Go-4eG" eventType="touchUpInside" id="j7x-Q2-6aG"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AE2-Us-NbF">
                                 <rect key="frame" x="23" y="88" width="274" height="264"/>
@@ -116,22 +127,31 @@
                                                         <state key="normal" image="spaceship_1">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="spaceshipsAction:" destination="PbK-Go-4eG" eventType="touchUpInside" id="UvW-R6-LfK"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oI5-Dm-h5a">
                                                         <rect key="frame" x="98" y="0.0" width="78" height="78"/>
                                                         <color key="backgroundColor" red="0.94653743505477905" green="0.78553062677383423" blue="0.82805889844894409" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <inset key="contentEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
-                                                        <state key="normal" image="spaceship_1">
+                                                        <state key="normal" image="spaceship_2">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="spaceshipsAction:" destination="PbK-Go-4eG" eventType="touchUpInside" id="nOn-7k-ySd"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4D-Dw-1dl">
                                                         <rect key="frame" x="196" y="0.0" width="78" height="78"/>
                                                         <color key="backgroundColor" red="0.94653743505477905" green="0.78553062677383423" blue="0.82805889844894409" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <inset key="contentEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
-                                                        <state key="normal" image="spaceship_1">
+                                                        <state key="normal" image="spaceship_3">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="spaceshipsAction:" destination="PbK-Go-4eG" eventType="touchUpInside" id="B08-VV-KLI"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -140,7 +160,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8Om-xx-l4K">
                                         <rect key="frame" x="0.0" y="142" width="274" height="122"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="select spaceship" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaZ-OK-9Fo">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="select a planet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaZ-OK-9Fo">
                                                 <rect key="frame" x="0.0" y="0.0" width="274" height="34"/>
                                                 <color key="backgroundColor" red="0.94653743505477905" green="0.78553062677383423" blue="0.82805889844894409" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="29"/>
@@ -154,25 +174,34 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
                                                         <color key="backgroundColor" red="0.94653743505477905" green="0.78553062677383423" blue="0.82805889844894409" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <inset key="contentEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
-                                                        <state key="normal" image="spaceship_1">
+                                                        <state key="normal" image="planet_1">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="planetsAction:" destination="PbK-Go-4eG" eventType="touchUpInside" id="xtF-c2-LmI"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U56-Uh-Qi9">
                                                         <rect key="frame" x="98" y="0.0" width="78" height="78"/>
                                                         <color key="backgroundColor" red="0.94653743505477905" green="0.78553062677383423" blue="0.82805889844894409" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <inset key="contentEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
-                                                        <state key="normal" image="spaceship_1">
+                                                        <state key="normal" image="planet_2">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="planetsAction:" destination="PbK-Go-4eG" eventType="touchUpInside" id="yZc-3a-Uhk"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1N-Vg-nZQ">
                                                         <rect key="frame" x="196" y="0.0" width="78" height="78"/>
                                                         <color key="backgroundColor" red="0.94653743505477905" green="0.78553062677383423" blue="0.82805889844894409" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <inset key="contentEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
-                                                        <state key="normal" image="spaceship_1">
+                                                        <state key="normal" image="planet_3">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="planetsAction:" destination="PbK-Go-4eG" eventType="touchUpInside" id="Tdt-dr-Djx"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -182,16 +211,16 @@
                                 <variation key="heightClass=compact-widthClass=compact" axis="vertical"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRM-Ps-Qfd">
-                                <rect key="frame" x="107" y="425" width="105" height="35"/>
+                                <rect key="frame" x="108" y="425" width="105" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.94653743505477905" green="0.78553062677383423" blue="0.82805889844894409" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
                                 <inset key="contentEdgeInsets" minX="30" minY="10" maxX="30" maxY="10"/>
-                                <state key="normal" title="Start">
+                                <state key="normal" title="Play">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="m9X-La-ogS" kind="show" id="kYx-t1-mC9"/>
+                                    <segue destination="m9X-La-ogS" kind="show" identifier="toThirdVC" animates="NO" id="kYx-t1-mC9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -205,15 +234,81 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cQL-d6-ukT"/>
                     </view>
+                    <connections>
+                        <outlet property="goBackButton" destination="lyT-Yr-QUE" id="lYZ-Qu-ejB"/>
+                        <outlet property="playButton" destination="KRM-Ps-Qfd" id="1fD-kt-1lv"/>
+                        <outletCollection property="selectItemsLabels" destination="fS7-iP-M3i" collectionClass="NSMutableArray" id="dHQ-gF-pM0"/>
+                        <outletCollection property="selectItemsLabels" destination="xaZ-OK-9Fo" collectionClass="NSMutableArray" id="QCF-Qu-voD"/>
+                        <outletCollection property="spaceships" destination="Jl2-Ci-coR" collectionClass="NSMutableArray" id="2lR-SJ-Jo2"/>
+                        <outletCollection property="spaceships" destination="oI5-Dm-h5a" collectionClass="NSMutableArray" id="naz-j2-UAw"/>
+                        <outletCollection property="spaceships" destination="A4D-Dw-1dl" collectionClass="NSMutableArray" id="MQe-RT-Fos"/>
+                        <outletCollection property="planets" destination="Gys-h3-Y8m" collectionClass="NSMutableArray" id="hhn-mI-L8u"/>
+                        <outletCollection property="planets" destination="U56-Uh-Qi9" collectionClass="NSMutableArray" id="4HH-5V-Fmd"/>
+                        <outletCollection property="planets" destination="t1N-Vg-nZQ" collectionClass="NSMutableArray" id="67Y-JT-xPh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z79-hu-BqB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="866.25" y="-69.375"/>
         </scene>
-        <!--View Controller-->
+        <!--RulesVC-->
+        <scene sceneID="U96-XV-0dt">
+            <objects>
+                <viewController id="mxl-fp-Bft" customClass="RulesVC" customModule="Space_Oddity" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IlU-2T-BkY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="3" translatesAutoresizingMaskIntoConstraints="NO" id="tl7-FS-Wvr">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leY-Yi-FpP">
+                                <rect key="frame" x="25" y="36" width="70" height="34"/>
+                                <color key="backgroundColor" red="0.94653743509999999" green="0.78553062679999996" blue="0.82805889840000002" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="Smq-w4-wtq"/>
+                                    <constraint firstAttribute="width" constant="70" id="urS-U8-qNl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="menu">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBackButton:" destination="mxl-fp-Bft" eventType="touchUpInside" id="xng-1X-nd5"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="I7R-1D-vRD">
+                                <rect key="frame" x="16" y="88" width="288" height="364"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94653743505477905" green="0.78553062677383423" blue="0.82805889844894409" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="scrollIndicatorInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="leY-Yi-FpP" firstAttribute="leading" secondItem="ByQ-5g-mFQ" secondAttribute="leading" constant="25" id="GYl-kX-csy"/>
+                            <constraint firstItem="leY-Yi-FpP" firstAttribute="top" secondItem="ByQ-5g-mFQ" secondAttribute="top" constant="16" id="g0n-iq-Da8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ByQ-5g-mFQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="goBackButton" destination="leY-Yi-FpP" id="zBC-ub-pEC"/>
+                        <outlet property="rulesTextView" destination="I7R-1D-vRD" id="SjC-74-w7L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ls6-MQ-GoG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="65.625" y="648.75"/>
+        </scene>
+        <!--ThirdVC-->
         <scene sceneID="asm-2o-7ce">
             <objects>
-                <viewController id="m9X-La-ogS" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThirdVC" id="m9X-La-ogS" customClass="ThirdVC" customModule="Space_Oddity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yp2-Io-KAE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -235,46 +330,39 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZXS-Oe-Igs">
-                                <rect key="frame" x="17" y="300" width="166" height="150"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXS-Oe-Igs">
+                                <rect key="frame" x="17" y="283" width="193" height="167"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.94653743505477905" green="0.78553062677383423" blue="0.82805889844894409" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.94653743505477905" green="0.78553062677383423" blue="0.82805889844894409" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="scrollIndicatorInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wR-bw-w5k">
-                                <rect key="frame" x="110" y="253" width="73" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.94653743509999999" green="0.78553062679999996" blue="0.82805889840000002" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
-                                <inset key="contentEdgeInsets" minX="4" minY="3" maxX="4" maxY="3"/>
-                                <state key="normal" title="False">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uv1-bi-iZf">
-                                <rect key="frame" x="17" y="253" width="72" height="39"/>
+                                <rect key="frame" x="17" y="237" width="78" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.94653743509999999" green="0.78553062679999996" blue="0.82805889840000002" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.26984900000000001" green="0.73391799999999996" blue="0.24248700000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
                                 <inset key="contentEdgeInsets" minX="4" minY="3" maxX="4" maxY="3"/>
                                 <state key="normal" title="True">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttons:" destination="m9X-La-ogS" eventType="touchUpInside" id="qF0-RW-gqx"/>
+                                </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="A2E-CO-XCB">
-                                <rect key="frame" x="17" y="95" width="166" height="150"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A2E-CO-XCB">
+                                <rect key="frame" x="17" y="89" width="193" height="137"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.94653743505477905" green="0.78553062677383423" blue="0.82805889844894409" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.94653743505477905" green="0.78553062677383423" blue="0.82805889844894409" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="scrollIndicatorInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="21"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" smartDashesType="yes"/>
                             </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5eY-2u-eZM">
-                                <rect key="frame" x="77" y="24" width="106" height="30"/>
+                                <rect key="frame" x="111" y="38" width="106" height="30"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like1" translatesAutoresizingMaskIntoConstraints="NO" id="XCo-gI-WQb">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -299,10 +387,55 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet_2" translatesAutoresizingMaskIntoConstraints="NO" id="pYp-FR-YD2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planet_3" translatesAutoresizingMaskIntoConstraints="NO" id="pYp-FR-YD2">
                                 <rect key="frame" x="222" y="25" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="spaceship_2" translatesAutoresizingMaskIntoConstraints="NO" id="g7d-8u-O8o">
+                                <rect key="frame" x="222" y="372" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wR-bw-w5k">
+                                <rect key="frame" x="133" y="237" width="77" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.79500951390683805" green="0.02140903438038394" blue="0.0064104435599910336" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="4" minY="3" maxX="4" maxY="3"/>
+                                <state key="normal" title="False">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttons:" destination="m9X-La-ogS" eventType="touchUpInside" id="Wk4-ZO-AHa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You win!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOU-oG-79K">
+                                <rect key="frame" x="17" y="99" width="286" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="77"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oag-l9-jIC">
+                                <rect key="frame" x="82" y="284" width="156" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94653743509999999" green="0.78553062679999996" blue="0.82805889840000002" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="30" minY="10" maxX="30" maxY="10"/>
+                                <state key="normal" title="Try again">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgt-0j-l02">
+                                <rect key="frame" x="82" y="338" width="156" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94653743509999999" green="0.78553062679999996" blue="0.82805889840000002" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="30" minY="10" maxX="30" maxY="10"/>
+                                <state key="normal" title="Go to menu">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -314,16 +447,35 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="D5h-IL-k92"/>
                     </view>
+                    <connections>
+                        <outlet property="endTitle" destination="UOU-oG-79K" id="K9K-a4-aHB"/>
+                        <outlet property="goBackButton" destination="nMM-mm-t5z" id="pxM-9X-Jjm"/>
+                        <outlet property="goToMenuButton" destination="Dgt-0j-l02" id="fdh-jb-qes"/>
+                        <outlet property="lowerTextView" destination="ZXS-Oe-Igs" id="ywj-cx-uxT"/>
+                        <outlet property="planet" destination="pYp-FR-YD2" id="hpU-lp-Xez"/>
+                        <outlet property="spaceship" destination="g7d-8u-O8o" id="BNc-Uf-6Xw"/>
+                        <outlet property="tryAgainButton" destination="oag-l9-jIC" id="gQi-AH-cuz"/>
+                        <outlet property="upperTextView" destination="A2E-CO-XCB" id="0Av-BF-E4D"/>
+                        <outletCollection property="hearts" destination="r6Q-4A-4Zd" collectionClass="NSMutableArray" id="6AA-rV-yOv"/>
+                        <outletCollection property="hearts" destination="uc3-Uk-WoW" collectionClass="NSMutableArray" id="m2U-fE-vUP"/>
+                        <outletCollection property="hearts" destination="XCo-gI-WQb" collectionClass="NSMutableArray" id="9YD-78-l0L"/>
+                        <outletCollection property="redGreenButtons" destination="0wR-bw-w5k" collectionClass="NSMutableArray" id="KBo-tU-nD6"/>
+                        <outletCollection property="redGreenButtons" destination="uv1-bi-iZf" collectionClass="NSMutableArray" id="9YL-p4-hfg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8U0-9b-XMJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1633.125" y="-70"/>
+            <point key="canvasLocation" x="1630.7881773399015" y="-72.799999999999997"/>
         </scene>
     </scenes>
     <resources>
         <image name="3" width="2732" height="2732"/>
         <image name="like1" width="24" height="24"/>
+        <image name="planet_1" width="64" height="64"/>
         <image name="planet_2" width="64" height="64"/>
+        <image name="planet_3" width="64" height="64"/>
         <image name="spaceship_1" width="64" height="64"/>
+        <image name="spaceship_2" width="64" height="64"/>
+        <image name="spaceship_3" width="64" height="64"/>
     </resources>
 </document>
