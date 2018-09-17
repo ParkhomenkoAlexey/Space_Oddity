@@ -8,7 +8,7 @@ The game works on all devices, including iPad. Supports screen rotations.
 
 ## Description
 
-  Hello! You are the pilot of the spacecraft TE-284. Huge luck - the ancient relics of the planet Sattul
+  Hello! You are the pilot of the spaceship TE-284. Huge luck - the ancient relics of the planet Sattul
 were in your hands. It is necessary to deliver a valuable cargo to the home planet in complete safety.
 The road is not easy, but very cognitive. Show all your knowledge about the Cosmos, answer the questions 
 and return home! Only two answers to the question: the truth or the lie. The correct answer will 
@@ -24,7 +24,9 @@ to make mistakes. Good luck! Your planet believes in you.
 права на ошибку. Удачи! Твоя планета верит в тебя.
 
 ## Gameplay
+![Settings](https://github.com/ParkhomenkoAlexey/Space_Oddity/blob/master/gameplay.gif)
 
+## Screenshots
 ![Settings](https://github.com/ParkhomenkoAlexey/Space_Oddity/blob/master/menu.png)
 ![Settings](https://github.com/ParkhomenkoAlexey/Space_Oddity/blob/master/second.png)
 
